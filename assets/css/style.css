@@ -1,3 +1,4 @@
+@import url(./fonts.css);
 @font-face {
   font-family: "museo-900";
   src: url("../fonts/MuseoSans 900.otf");
@@ -25,7 +26,8 @@
 
 body {
   min-height: 100vh;
-  font-family: "museo-500";
+  font-family: "WorkSans";
+  font-weight: 400;
   user-select: none;
 }
 
@@ -33,14 +35,53 @@ main.container {
   header {
     h1 {
       text-align: center;
-      font-family: "museo-900";
-      padding: 16px;
+      font-family: "WorkSans";
+      font-weight: 600;
+      padding-top: 8px;
       font-size: clamp(2rem, 5vw, 4rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .it {
+      font-style: italic;
+      margin-right: 0.2rem;
+      margin-left: -0.2rem;
+    }
+
+    .xxl {
+      font-size: clamp(4rem, 8vw, 8rem);
+      margin-right: 12px;
+    }
+
+    /* Ajustements spécifiques pour les petits écrans */
+    @media (max-width: 768px) {
+      .it {
+        margin-right: 0.2rem; /* Ajuster la marge pour les petits écrans */
+        margin-left: -0.1rem;
+      }
+
+      .xxl {
+        margin-right: 6px; /* Réduire la marge pour les petits écrans */
+      }
+    }
+
+    /* Ajustements spécifiques pour les très grands écrans */
+    @media (min-width: 1200px) {
+      .it {
+        margin-right: 0.3rem; /* Ajuster la marge pour les très grands écrans */
+        margin-left: -0.3rem;
+      }
+
+      .xxl {
+        margin-right: 16px; /* Augmenter la marge pour les très grands écrans */
+      }
     }
   }
 
   main.content {
-    padding: 8px;
+    padding: 0 8px;
 
     div {
       text-align: center;
@@ -51,7 +92,8 @@ main.container {
       }
 
       &.construction {
-        margin: 12px;
+        margin-top: -1rem;
+        margin-bottom: 12px;
         font-family: "museo-700";
         font-size: clamp(1.5rem, 5vw, 3rem);
       }
